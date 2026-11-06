@@ -1,0 +1,1 @@
+{"parts": ["optimized-model-v5-0.bin", "optimized-model-v5-1.bin"], "faces": null, "materials": 100, "geometries": 1388, "nodes": 1388, "instances": 45604, "bounds": [[-63, -0.3, -47], [-34, 10.4, -25]], "structureBounds": [[-55.5, -0.2, -45.5], [-35, 10, -32.5]]}
