@@ -21,7 +21,7 @@ const keys=new Set(),clipPlane=new THREE.Plane(new THREE.Vector3(0,-1,0),1000);
 renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();$('#gpuFallback').hidden=false;status('การแสดงผล 3 มิติหยุดทำงานบนอุปกรณ์นี้')});
 const sheetLabels=['ID-101 · เฟอร์นิเจอร์ชั้น 1','ID-102 · เฟอร์นิเจอร์ชั้น 2','ID-103 · เฟอร์นิเจอร์ชั้น 3','EL-101 · แสงสว่างชั้น 1','EL-102 · แสงสว่างชั้น 2','EL-103 · แสงสว่างชั้น 3','EP-101 · เต้ารับชั้น 1','EP-102 · เต้ารับชั้น 2','EP-103 · เต้ารับชั้น 3','AC-101 · ปรับอากาศชั้น 1','AC-102 · ปรับอากาศชั้น 2','AC-103 · ปรับอากาศชั้น 3'];
 const spaces={
-1:[['ห้องน้ำ',.9,.82,.86,.27],['ประชุมใหญ่',.08,.72,.28,.6],['ห้องประชุมย่อย 1',.3,.76,.38,.58],['ห้องประชุมย่อย 2',.48,.76,.47,.58],['ห้องประชุมย่อย 3',.68,.76,.57,.58],['ห้องประชุมย่อย 4',.83,.76,.66,.58],['ประชุมส่วนกลาง',.72,.4,.59,.45],['Semi-outdoor',.7,.16,.53,.32],['บันไดกลาง',.48,.19,.45,.33]],
+1:[['ห้องน้ำ',.1,.15,.26,.32],['ประชุมใหญ่',.08,.72,.28,.6],['ห้องประชุมย่อย 1',.3,.76,.38,.58],['ห้องประชุมย่อย 2',.48,.76,.47,.58],['ห้องประชุมย่อย 3',.68,.76,.57,.58],['ห้องประชุมย่อย 4',.83,.76,.66,.58],['ประชุมส่วนกลาง',.72,.4,.59,.45],['Semi-outdoor',.7,.16,.53,.32],['บันไดกลาง',.48,.19,.45,.33]],
 2:[['ห้องประชุม',.18,.22,.3,.3],['พื้นที่สัมมนา',.62,.65,.55,.56],['บันได Outdoor',.48,.2,.45,.32],['พื้นที่ภายนอก',.94,.54,.71,.49],['พื้นที่พักผ่อน',.35,.25,.36,.3]],
 3:[['ห้องส่วนตัว',.2,.25,.3,.31],['ห้องทำงาน',.36,.38,.39,.39],['ห้องนั่งเล่น',.25,.74,.36,.57],['ดาดฟ้า Outdoor',.66,.58,.58,.54],['บันได Outdoor',.48,.2,.45,.32]]
 };
@@ -60,8 +60,8 @@ function addFloorOneToilets(){
  const water=new THREE.MeshStandardMaterial({name:'น้ำในโถ',color:'#617b80',roughness:.16,metalness:.05});
  const chrome=new THREE.MeshStandardMaterial({name:'ปุ่มกดโครเมียม',color:'#bac4c6',roughness:.25,metalness:.62});
  const make=(geometry,material,x,y,z,parent)=>{const mesh=new THREE.Mesh(geometry,material);mesh.position.set(x,y,z);mesh.castShadow=false;mesh.receiveShadow=true;parent.add(mesh);return mesh};
- for(const z of [-34.5,-36.05,-37.6,-39.15]){
-  const unit=new THREE.Group();unit.position.set(-36.6,.02,z);
+ for(const z of [-44.6,-43.25,-41.9]){
+  const unit=new THREE.Group();unit.position.set(-53.9,.02,z);
   const pedestal=make(new THREE.CylinderGeometry(.22,.19,.34,18),porcelain,0,.22,0,unit);pedestal.scale.z=1.25;
   const bowl=make(new THREE.SphereGeometry(.29,20,12),porcelain,0,.42,-.12,unit);bowl.scale.set(1,.35,1.3);
   const opening=make(new THREE.CircleGeometry(.19,20),water,0,.518,-.12,unit);opening.rotation.x=-Math.PI/2;opening.scale.y=1.3;
